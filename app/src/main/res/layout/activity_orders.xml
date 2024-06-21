@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:scaleType="fitXY"
+    android:keepScreenOn="true"
+    android:weightSum="100"
+    android:background="@color/white"
+    >
+    <!-- <com.facebook.shimmer.ShimmerFrameLayout
+         android:id="@+id/shimmer_view_container"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:visibility="visible"
+         android:layout_marginTop="0dp"
+         app:shimmer_duration="800">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+             <include layout="@layout/grey_loading" />
+         </LinearLayout>
+     </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <RelativeLayout
+
+        android:id="@+id/totalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:context=".DhofarDashboard">
+
+        <!-- Header aligned to top -->
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#FFF"
+            android:gravity="center" >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:contentInsetLeft="0dp"
+                app:title="Home Page"
+                android:contentInsetLeft="0dp"
+                android:contentInsetStart="0dp"
+                android:contentInsetStartWithNavigation="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar.Font" >
+                <LinearLayout
+                    android:id="@+id/menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginHorizontal="16dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/menu_drawer"
+                            android:layout_width="40dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/back_arrow"
+                            app:tint="@color/black" />
+                        <ImageView
+                            android:id="@+id/logo"
+                            android:layout_marginStart="40dp"
+                            android:layout_width="wrap_content"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/edu_small_logo"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/image_layout"
+                        android:layout_width="36dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:layout_height="36dp">
+                        <ImageView
+                            android:id="@+id/search"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/iconamoon_search"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
+
+        <!-- Footer aligned to bottom -->
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_below="@id/header"/>
+        <!-- Scrollable Item below header and above footer -->
+        <ScrollView
+            android:id="@+id/scrollableContents"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#FFF"
+            android:layout_below="@id/view" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/policiesLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#E3E7EE"
+                    android:paddingBottom="@dimen/mrg_10"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="26dp"
+                        android:paddingHorizontal="16dp"
+                        android:weightSum="2">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="@dimen/headerThree"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:text="My Orders"/>
+                    </LinearLayout>
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ordersRecyclerView"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!--<com.ismaeldivita.chipnavigation.ChipNavigationBar
+            android:id="@+id/bottom_nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:background="#fff"
+            android:visibility="visible"
+            android:fadingEdge="horizontal"
+            app:cnb_menuResource="@menu/menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buyInsurance"
+            />-->
+
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/pBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:indeterminateTint="@color/text_color"
+        app:layout_constraintVertical_bias="0.448"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

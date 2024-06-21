@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical|left"
+    android:layout_gravity="bottom"
+    android:paddingHorizontal="10dp"
+    android:orientation="horizontal"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="left"
+        android:src="@drawable/edutech_logo"/>
+
+
+</LinearLayout>

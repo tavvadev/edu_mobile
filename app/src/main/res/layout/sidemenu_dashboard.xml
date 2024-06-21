@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/activity_dashboard_activty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="#3D4A5E"
+        android:paddingTop="30dp"
+        app:headerLayout="@layout/nav_header_main">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#212D3F"
+            android:layout_marginTop="150dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:layout_gravity="start">
+                <TextView
+                    android:id="@+id/categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="18dp"
+                    android:textSize="@dimen/headerThree"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:drawableStart="@drawable/grid"
+                    android:fontFamily="@font/poppins_regular"
+                    android:drawablePadding="8dp"
+                    android:textColor="#FFFCF2"
+                    android:gravity="center_vertical"
+                    android:text="Categories"/>
+
+
+                <TextView
+                    android:id="@+id/orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="18dp"
+                    android:textSize="@dimen/headerThree"
+                    android:layout_marginLeft="1dp"
+                    android:drawableStart="@drawable/ic_cart_icn"
+                    android:fontFamily="@font/poppins_regular"
+                    android:drawablePadding="8dp"
+                    android:textColor="#FFFCF2"
+                    android:gravity="center_vertical"
+                    android:text="My Orders"/>
+                <TextView
+                    android:id="@+id/profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="18dp"
+                    android:textSize="@dimen/headerThree"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:drawablePadding="8dp"
+                    android:textColor="#FFFCF2"
+                    android:drawableStart="@drawable/profile"
+                    android:gravity="center_vertical"
+                    android:text="Profile"/>
+
+                <TextView
+                    android:id="@+id/logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="18dp"
+                    android:textSize="@dimen/headerThree"
+                    android:layout_marginTop="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/logout"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="#FFFCF2"
+                    android:text="Logout"/>
+            </LinearLayout>
+
+        </ScrollView>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="@dimen/headerFive"
+            android:textColor="@color/color_white"
+            android:padding="16dp"
+            android:background="@drawable/sidemenu_background"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            tools:text=""/>
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

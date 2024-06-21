@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:scaleType="fitXY"
+    android:keepScreenOn="true"
+    android:weightSum="100"
+    android:background="@color/white"
+    >
+    <!-- <com.facebook.shimmer.ShimmerFrameLayout
+         android:id="@+id/shimmer_view_container"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:visibility="visible"
+         android:layout_marginTop="0dp"
+         app:shimmer_duration="800">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+             <include layout="@layout/grey_loading" />
+         </LinearLayout>
+     </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <RelativeLayout
+
+        android:id="@+id/totalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:context=".DhofarDashboard">
+
+        <!-- Header aligned to top -->
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#FFF"
+            android:gravity="center" >
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:contentInsetLeft="0dp"
+                app:title="Home Page"
+                android:contentInsetLeft="0dp"
+                android:contentInsetStart="0dp"
+                android:contentInsetStartWithNavigation="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar.Font" >
+                <LinearLayout
+                    android:id="@+id/menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginHorizontal="16dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:gravity="center_vertical"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/menu_drawer"
+                            android:layout_width="40dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/back_arrow"
+                            app:tint="@color/black" />
+                        <ImageView
+                            android:id="@+id/logo"
+                            android:layout_marginStart="40dp"
+                            android:layout_width="wrap_content"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/edu_small_logo"/>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/image_layout"
+                        android:layout_width="36dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:layout_height="36dp">
+                        <ImageView
+                            android:id="@+id/search"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/iconamoon_search"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </RelativeLayout>
+
+        <!-- Footer aligned to bottom -->
+        <RelativeLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FFF"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:weightSum="3"
+                android:padding="10dp"
+                android:elevation="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!--
+                                <com.ismaeldivita.chipnavigation.ChipNavigationBar
+                                    android:id="@+id/bottom_nav_bar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="bottom"
+                                    android:background="#fff"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:visibility="visible"
+                                    android:fadingEdge="horizontal"
+                                    app:cnb_menuResource="@menu/menu"
+                                    />-->
+            </LinearLayout>
+        </RelativeLayout>
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_below="@id/header"/>
+        <!-- Scrollable Item below header and above footer -->
+        <ScrollView
+            android:id="@+id/scrollableContents"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/footer"
+            android:background="#FFF"
+            android:layout_below="@id/view" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/profileImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <!--  <de.hdodenhof.circleimageview.CircleImageView
+                          android:id="@+id/profile_image"
+                          android:layout_width="match_parent"
+                          android:layout_height="100dp"
+                          android:layout_centerHorizontal="true"
+                          android:layout_centerInParent="true"
+                          android:background="#00ffffff"
+                          android:src="@drawable/empty_user"
+                          />-->
+
+                    <ImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:orientation="vertical"
+                        android:src="@drawable/male_icon"
+                        tools:layout_editor_absoluteX="0dp">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/textBlock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/profileImage">
+
+                    <TextView
+                        android:id="@+id/id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="ID : 98675"
+                        android:textAlignment="center"
+                        android:textColor="#273446"
+                        android:textSize="@dimen/headerOne" />
+                    <TextView
+                        android:id="@+id/role"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Role: Head Master"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/headerThree"
+                        />
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name: Hari Reddy"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/headerThree"
+                        />
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Email: harireddy@gmail.com"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/headerThree"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile: 9087765678"
+                        android:textAlignment="center"
+                        android:visibility="gone"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="@dimen/headerThree"
+                        />
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!--<com.ismaeldivita.chipnavigation.ChipNavigationBar
+            android:id="@+id/bottom_nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:background="#fff"
+            android:visibility="visible"
+            android:fadingEdge="horizontal"
+            app:cnb_menuResource="@menu/menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buyInsurance"
+            />-->
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

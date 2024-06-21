@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#131F30"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="@dimen/headerFour"
+        android:textStyle="bold"
+        android:text="Enter Reason for Rejection"/>
+
+    <EditText
+        android:id="@+id/reasonEditText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/grey_button_border"
+        android:elevation="6dp"
+        android:layout_marginTop="@dimen/pad_10"
+        android:paddingHorizontal="10dp"
+        android:gravity="top"
+        android:textSize="@dimen/headerFive"
+        android:inputType="textMultiLine"
+        android:drawableTint="@color/light_grey"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginBottom="@dimen/mrg_10" />
+
+</LinearLayout>

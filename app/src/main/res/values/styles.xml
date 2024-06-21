@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="NoTitleBarTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="android:colorAccent">@color/black</item>
+        <item name="android:statusBarColor">@color/color_white</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+
+    </style>
+
+
+    <style name="Widget.Theme.MyTestApplication2.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.MyTestApplication2.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+    <style name="ThemeOverlay.AppCompat.Dark.ActionBar.Font" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:colorControlNormal">@color/black</item>
+    </style>
+
+</resources>
